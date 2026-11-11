@@ -1,0 +1,37 @@
+{
+  "name": "@tickon/types",
+  "version": "1.0.0",
+  "description": "Shared TypeScript data models, enums, API contracts, and real-time events for Tickon",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup && tsc",
+    "check-types": "tsc --noEmit",
+    "clean": "node -e \"const fs = require('fs'); fs.rmSync('dist', { recursive: true, force: true });\"",
+    "dev": "tsup --watch",
+    "test": "echo \"No test specified\" && exit 0"
+  },
+  "keywords": [
+    "tickon",
+    "types",
+    "models"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "tsup": "^8.3.5",
+    "typescript": "^7.0.2"
+  }
+}
