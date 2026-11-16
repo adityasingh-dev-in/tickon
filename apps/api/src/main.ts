@@ -16,7 +16,10 @@ async function bootstrap() {
   app.use(cookieParser());
 
   // CORS
-  const frontendUrl = configService.get<string>('FRONTEND_URL', 'http://localhost:3000');
+  const frontendUrl = configService.get<string>(
+    'FRONTEND_URL',
+    'http://localhost:3000',
+  );
   app.enableCors({
     origin: [frontendUrl],
     credentials: true,
@@ -36,6 +39,8 @@ async function bootstrap() {
       },
     }),
   );
+
+
 
   // Enable graceful shutdown hooks for Prisma
   app.enableShutdownHooks();
